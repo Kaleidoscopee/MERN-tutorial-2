@@ -3,10 +3,8 @@ const router = express.Router()
 const { getGoals } = require('../controllers/goalController')
 
 //ROUTES
-// get route (The R in CRUD(Read))
-router.get('/', (req, res) => {
-    res.status(200).json({ message: 'Get goals' })          
-})
+// get route (The R in CRUD(Read)) // abstracted out to goalController
+router.get('/', getGoals)
 // post route (The C in CRUD(Create))
 router.post('/', (req, res) => {
     res.status(200).json({ message: 'Set goals' })
